@@ -22,14 +22,10 @@ Domain architecture (the quality control domain model):
 - `docs/domain-architecture/DOMAIN-MODEL-L2.md` — L2 ubiquitous language
 
 Cross-cutting:
-- `docs/DEVELOPER-WORKFLOWS.md` → `docs/developer-workflows/`
-- `docs/USER-EXPERIENCE.md` → `docs/user-experience/`
+- `docs/DEVELOPER-WORKFLOWS.md`
+- `docs/USER-EXPERIENCE.md`
 - `AGENTS.md` → `docs/agents-detail/`
-- `docs/adr/` — numbered decision records
-- `docs/plans/` — implementation plans and specs
 - `docs/musings/` — pre-artifact thought capture
-- `docs/retros/` — post-session reflection docs
-- `docs/tech-debt/` — pre-existing issues
 - `docs/troves/` — research source materials
 
 Read the hub first, then drill into spokes when you need detail.

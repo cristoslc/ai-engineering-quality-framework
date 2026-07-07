@@ -24,6 +24,5 @@ flowchart TB
 
 This project is pure documentation:
 - **Format:** Markdown with Mermaid.js diagrams
-- **Version Control:** Git (with worktree discipline)
-- **Forge:** Forgejo at git.cove (fj remote)
+- **Version Control:** Git
 - **Validation:** `mmdc` for diagram verification, markdownlint for prose

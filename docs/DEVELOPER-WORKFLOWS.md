@@ -16,7 +16,7 @@ Validation is handled by:
 
 ## Deploy
 
-No deployment — this is a documentation artifact. See `scripts/staging/README.md` for the staging exemption.
+No deployment — this is a documentation artifact.
 
 ## Local Development
 

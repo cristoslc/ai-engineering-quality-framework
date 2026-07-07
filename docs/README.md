@@ -6,7 +6,7 @@ This directory contains all project documentation, split into two architectural 
 
 - **Domain architecture** — `DOMAIN-MODEL-L1.md`, `domain-architecture/` (DDD artifacts: context map, domain events, L2 model, event contracts)
 - **Technical architecture** — `ARCHITECTURE.md`, `technical-architecture/` (C4 diagrams, deployment topology, tech stack)
-- **Cross-cutting** — `DEVELOPER-WORKFLOWS.md`, `USER-EXPERIENCE.md`, `adr/`, `plans/`, `musings/`, `retros/`, `tech-debt/`, `troves/`
+- **Cross-cutting** — `DEVELOPER-WORKFLOWS.md`, `USER-EXPERIENCE.md`, `musings/`, `troves/`
 
 ## Primary artifact
 
