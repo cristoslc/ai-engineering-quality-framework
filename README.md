@@ -1,5 +1,7 @@
 # AI Engineering Quality Framework
 
+> **⚠ AI-generated, no human review.** Every word in this repository was written by an AI language model (DeepSeek V4 Flash). The analysis, the report, the musings, the troves, the README — all of it. No human has verified the claims, checked the citations, or reviewed the reasoning. Treat everything here as a starting point for your own investigation, not as authoritative analysis.
+
 A quality control analysis of an AI-assisted software engineering agent framework, benchmarked against industry standards (ISO 25010, IEEE 829, ISTQB, Six Sigma, TQM, SPC, ISO 9001) and compared against Claydon's "Stop Reviewing Code. Start Reviewing Intent." thesis.
 
 ---

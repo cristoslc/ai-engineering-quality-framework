@@ -1,5 +1,7 @@
 # How Does Your Quality Framework Compare?
 
+> **⚠ AI-generated, no human review.** This report was written by an AI language model (DeepSeek V4 Flash). The analysis, the comparisons, the gap assessments — all of it. No human has verified the claims, checked the source material citations, or reviewed the reasoning. The underlying source troves were also collected and normalized by AI. Treat everything here as a starting point for your own investigation, not as authoritative analysis.
+
 You have a quality framework — maybe engineering standards, a QA process, or an agent instruction system. You found this repo and want to know: how does this one differ from mine? What would I gain or lose by adopting pieces of it? And how does it relate to Claydon's argument that code review itself is the wrong artifact to review?
 
 This report answers those questions. It's based on a detailed analysis of an agent instruction framework (`~/.agents/AGENTS.md`) that implements 18 quality control dimensions — benchmarked against ISO 25010, IEEE 829, ISTQB, Six Sigma, TQM, SPC, and ISO 9001.
