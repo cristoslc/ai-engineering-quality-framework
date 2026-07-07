@@ -20,6 +20,13 @@ The `~/.agents/` framework was informed by research collected in the owner's wor
 | Overnight autonomy scheduling | opencode-scheduler, claude-code-scheduler, via `docs/troves/opencode-claude-overnight-plugins/` | The self-deleting launchd/systemd timer pattern |
 | "Fail Fast, Fail Loud" | Christina Lin, via `docs/troves/ai-coding-review-2026/` | Reinforced the fail-loud-never-coerce spoke (the framework had this independently) |
 | "Review boundaries, not implementation" | Christina Lin, via `docs/troves/ai-coding-review-2026/` | Influenced the debugging ritual's "check the obvious first" step |
+| "Tests as Specification" | Christina Lin, via `docs/troves/ai-coding-review-2026/` | Converges with the framework's test-first mandate and inverse-assertion requirement |
+| "Types as Contracts" | Christina Lin, via `docs/troves/ai-coding-review-2026/` | Converges with the coding discipline's single-source-of-truth principle |
+| "Vertical Slices, Strong Boundaries" | Christina Lin, via `docs/troves/ai-coding-review-2026/` | Converges with the context-map-domain-model spoke's bounded context discipline |
+| pass^k metric and k=5 convention | Anthropic τ-Bench, referenced in `test-driven-design.md` | The non-deterministic testing protocol's primary metric and sample size recommendation |
+| YAGNI ladder | [ponytail](https://github.com/ponytail/ponytail), referenced in `coding-discipline.md` | The 5-rung decision framework (hard-code → parameterize → abstract → plugin → language) |
+| "Helpful Data Coercion" pattern | Christina Lin, via `docs/troves/ai-coding-review-2026/` | Converges with the fail-loud-never-coerce spoke's "no silent fallbacks" rule |
+| "Context rot" concept | Christina Lin, via `docs/troves/ai-coding-review-2026/` | Informs the framework's emphasis on keeping the hub under the instruction budget |
 
 ## Research Troves Collected for This Analysis
 
