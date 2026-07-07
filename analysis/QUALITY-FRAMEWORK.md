@@ -24,9 +24,9 @@
 
 ## Executive Summary
 
-The `~/.agents/AGENTS.md` framework implements a surprisingly comprehensive quality control system for AI-assisted software engineering. It covers 18 distinct quality control dimensions spanning test discipline, error handling, architectural governance, deployment safety, and agent behavior. When mapped against industry standards, the framework shows **strong coverage** in test-driven development, debugging discipline, and deployment safety, **moderate coverage** in static analysis and architectural governance, and **notable gaps** in quantitative measurement, formal review processes, and requirements traceability.
+The `~/.agents/AGENTS.md` framework implements a quality control system for AI-assisted software engineering. It covers 18 quality control dimensions spanning test discipline, error handling, architectural governance, deployment safety, and agent behavior. When mapped against industry standards, the framework shows **strong coverage** in test-driven development, debugging discipline, and deployment safety, **moderate coverage** in static analysis and architectural governance, and **gaps** in quantitative measurement, formal review processes, and requirements traceability.
 
-The framework's most distinctive quality contribution is its **behavioral quality controls** — rules that govern how the AI agent itself behaves (fail-loud, no coercion, test-first, catch-yourself-before-you-fix). These have no direct analogue in traditional software QA but map conceptually to manufacturing's "poka-yoke" (mistake-proofing) and standard work instructions.
+The framework's quality contribution is its **behavioral quality controls**, rules that govern how the AI agent itself behaves (fail-loud, no coercion, test-first, catch-yourself-before-you-fix). These have no direct analogue in traditional software QA but map conceptually to manufacturing's "poka-yoke" (mistake-proofing) and standard work instructions.
 
 ---
 
@@ -55,7 +55,7 @@ The following inventory catalogs every quality control mechanism found in the hu
 |----------|-----------|------|
 | 8-step ritual | Reproduce → write failing test → isolate root cause → additional tests → implement fix → verify → full suite → commit | Process gate |
 | Catch-yourself-before-you-fix | Trigger-word detection to prevent skipping test step | Behavioral guard |
-| No rationalizing test failures | Test failure is a test failure — no euphemisms | Behavioral guard |
+| No rationalizing test failures | Test failure is a test failure, no euphemisms | Behavioral guard |
 | Binary search (git bisect) | Regression isolation technique | Tooling |
 | Assertions over print statements | Document assumptions as executable checks | Practice standard |
 | Reproduce in isolation | Minimize confounding factors | Practice standard |
@@ -306,34 +306,34 @@ Design processes so errors are impossible or immediately detectable. Three types
 
 | Industry Practice | Framework Coverage | Strength |
 |-------------------|-------------------|----------|
-| **Test Planning (IEEE 829)** | MTP/LTP with 3D coverage matrix | **Strong** — exceeds IEEE 829 with blast-radius gating and sashay delta procedure |
-| **Test Levels (ISTQB)** | 9 required test types + 3-tier system | **Strong** — covers all ISTQB levels plus agent-specific types |
-| **Test-First (TDD)** | Mandatory test-before-fix, catch-yourself triggers | **Strong** — enforced at behavioral level, not just policy |
-| **Static Analysis** | LSP error handling, lint violations, tech debt tracking | **Moderate** — reactive (fixes pre-existing errors) rather than proactive gating |
-| **Code Review** | Coding discipline checklist, YAGNI ladder | **Weak** — no formal review process; relies on agent self-discipline |
-| **CI/CD Quality Gates** | Two-stage pipeline with setup/deploy/e2e/teardown scripts | **Strong** — staging gate with SPC fitness functions |
-| **Security Testing** | Adversarial input testing, prompt injection, red-team, penetration tests | **Strong** — agent-specific adversarial corpus requirement |
-| **Performance Testing** | Speed guidelines (>60s flag), SPC latency monitoring | **Moderate** — guidelines only, no load/stress testing requirement |
-| **Requirements Traceability** | Event contracts with versioning, domain model discipline | **Moderate** — event-level traceability, no requirement-to-test matrix |
-| **Test Documentation (IEEE 829)** | YAML test suites, structured reports, JSONL logging | **Strong** — machine-parseable formats exceed IEEE 829 |
-| **Defect Management** | Debugging ritual, tech debt lifecycle, warning triage | **Strong** — full lifecycle from discovery to fix to regression protection |
-| **Configuration Management** | Worktree discipline, branch sanitization, LSP config requirements | **Strong** — enforced at hook level |
-| **Non-Deterministic Testing** | pass^k metric, session-enriched JSONL, ratio guidance | **Strong** — novel contribution beyond industry standards |
-| **Observability** | Date/time bookending, SPC fitness functions, structured logging | **Moderate** — agent-level observability, no application-level requirement |
-| **Disaster Recovery** | Teardown safety guards, rollback readiness (implied) | **Moderate** — staging safety, no production DR plan requirement |
+| **Test Planning (IEEE 829)** | MTP/LTP with 3D coverage matrix | **Strong**, exceeds IEEE 829 with blast-radius gating and sashay delta procedure |
+| **Test Levels (ISTQB)** | 9 required test types + 3-tier system | **Strong**, covers all ISTQB levels plus agent-specific types |
+| **Test-First (TDD)** | Mandatory test-before-fix, catch-yourself triggers | **Strong**, enforced at behavioral level, not just policy |
+| **Static Analysis** | LSP error handling, lint violations, tech debt tracking | **Moderate**, reactive (fixes pre-existing errors) rather than proactive gating |
+| **Code Review** | Coding discipline checklist, YAGNI ladder | **Weak**, no formal review process; relies on agent self-discipline |
+| **CI/CD Quality Gates** | Two-stage pipeline with setup/deploy/e2e/teardown scripts | **Strong**, staging gate with SPC fitness functions |
+| **Security Testing** | Adversarial input testing, prompt injection, red-team, penetration tests | **Strong**, agent-specific adversarial corpus requirement |
+| **Performance Testing** | Speed guidelines (>60s flag), SPC latency monitoring | **Moderate**, guidelines only, no load/stress testing requirement |
+| **Requirements Traceability** | Event contracts with versioning, domain model discipline | **Moderate**, event-level traceability, no requirement-to-test matrix |
+| **Test Documentation (IEEE 829)** | YAML test suites, structured reports, JSONL logging | **Strong**, machine-parseable formats exceed IEEE 829 |
+| **Defect Management** | Debugging ritual, tech debt lifecycle, warning triage | **Strong**, full lifecycle from discovery to fix to regression protection |
+| **Configuration Management** | Worktree discipline, branch sanitization, LSP config requirements | **Strong**, enforced at hook level |
+| **Non-Deterministic Testing** | pass^k metric, session-enriched JSONL, ratio guidance | **Strong**, novel contribution beyond industry standards |
+| **Observability** | Date/time bookending, SPC fitness functions, structured logging | **Moderate**, agent-level observability, no application-level requirement |
+| **Disaster Recovery** | Teardown safety guards, rollback readiness (implied) | **Moderate**, staging safety, no production DR plan requirement |
 
 ### ISO 25010 Quality Characteristics Coverage
 
 | Characteristic | Framework Coverage |
 |----------------|-------------------|
-| Functional Suitability | **Strong** — test-first, inverse assertions, behavioral contracts |
-| Performance Efficiency | **Weak** — speed guidelines only, no formal performance requirements |
-| Compatibility | **Weak** — no explicit compatibility testing requirement |
-| Usability | **Moderate** — operator-assisted UAT, but no usability-specific testing |
-| Reliability | **Strong** — RGR cycle, no-skip enforcement, SPC monitoring, fault tolerance via fail-loud |
-| Security | **Strong** — adversarial testing, secret management, prompt injection defense |
-| Maintainability | **Strong** — coding discipline, YAGNI ladder, single source of truth, tech debt lifecycle |
-| Portability | **Weak** — no explicit portability testing requirement |
+| Functional Suitability | **Strong**, test-first, inverse assertions, behavioral contracts |
+| Performance Efficiency | **Weak**, speed guidelines only, no formal performance requirements |
+| Compatibility | **Weak**, no explicit compatibility testing requirement |
+| Usability | **Moderate**, operator-assisted UAT, but no usability-specific testing |
+| Reliability | **Strong**, RGR cycle, no-skip enforcement, SPC monitoring, fault tolerance via fail-loud |
+| Security | **Strong**, adversarial testing, secret management, prompt injection defense |
+| Maintainability | **Strong**, coding discipline, YAGNI ladder, single source of truth, tech debt lifecycle |
+| Portability | **Weak**, no explicit portability testing requirement |
 
 ### Manufacturing Analogues Coverage
 
@@ -343,7 +343,7 @@ Design processes so errors are impossible or immediately detectable. Three types
 | **SPC (Control Charts)** | SPC fitness functions in two-stage pipelines (z-score, 3σ threshold) | **Strong** |
 | **Poka-Yoke (Mistake-Proofing)** | Catch-yourself triggers, pre-checkout hook, teardown safety guards, todo schema enforcement | **Strong** |
 | **TQM (Continuous Improvement)** | Retro ritual, tech debt lifecycle, warning triage, plan conversion | **Strong** |
-| **ISO 9001 QMS** | Hub-and-spoke documentation structure, mandatory artifacts, process approach | **Moderate** — documented but not audited |
+| **ISO 9001 QMS** | Hub-and-spoke documentation structure, mandatory artifacts, process approach | **Moderate**, documented but not audited |
 | **FMEA (Failure Mode Analysis)** | Blast-radius gate, adversarial testing, inverse assertions | **Strong** |
 | **5S (Workplace Organization)** | Worktree discipline, standardized directory layout, well-known paths | **Strong** |
 | **Kaizen (Incremental Improvement)** | Muse → plan → sashay pipeline, retro → next actions | **Strong** |
@@ -354,9 +354,9 @@ Design processes so errors are impossible or immediately detectable. Three types
 
 ## Gap Analysis: The Textbook QA/QC Perspective
 
-This section starts from the "textbook complete" perspective — what a comprehensive QA/QC system would include — and identifies where the framework has coverage and where gaps exist.
+This section starts from the "textbook complete" perspective, what a full QA/QC system would include, and identifies where the framework has coverage and where gaps exist.
 
-### Software Engineering QA/QC — Textbook Model
+### Software Engineering QA/QC, Textbook Model
 
 A "textbook complete" software QA/QC system, drawing from ISO 25010, IEEE 829, ISTQB, ISO 29119, and modern DevOps practices, would include:
 
@@ -374,8 +374,8 @@ A "textbook complete" software QA/QC system, drawing from ISO 25010, IEEE 829, I
 
 | Element | Coverage | Notes |
 |---------|----------|-------|
-| Process definition and documentation | **Strong** | Hub-and-spoke framework is comprehensive process documentation |
-| Process compliance auditing | **Absent** | No audit mechanism — relies on agent self-enforcement |
+| Process definition and documentation | **Strong** | Hub-and-spoke framework is full process documentation |
+| Process compliance auditing | **Absent** | No audit mechanism, relies on agent self-enforcement |
 | Process improvement (PDCA) | **Strong** | Retro ritual, muse → plan → sashay pipeline |
 | Training and competency | **Partial** | Spoke files serve as training, but no competency verification |
 | Supplier quality management | **Absent** | No vendor/supplier quality requirements |
@@ -451,7 +451,7 @@ A "textbook complete" software QA/QC system, drawing from ISO 25010, IEEE 829, I
 | Requirements validation | **Absent** | No requirements review or validation process |
 | Requirements change management | **Partial** | Event versioning; no general requirements change process |
 
-### Manufacturing QA/QC — Textbook Model
+### Manufacturing QA/QC, Textbook Model
 
 A "textbook complete" manufacturing QA/QC system, drawing from ISO 9001, Six Sigma, TQM, and Lean, would include:
 
@@ -460,7 +460,7 @@ A "textbook complete" manufacturing QA/QC system, drawing from ISO 9001, Six Sig
 | Element | Coverage | Notes |
 |---------|----------|-------|
 | Documented QMS | **Strong** | Hub-and-spoke framework is a documented QMS |
-| Quality manual | **Partial** | AGENTS.md serves as quality manual; no explicit quality policy |
+| Quality manual | **Partial** | AGENTS.md is the quality manual; no explicit quality policy |
 | Document control | **Strong** | Version-controlled spoke files, hub-and-spoke conventions |
 | Record control | **Strong** | JSONL logs, test reports, tech debt index |
 | Management responsibility | **Absent** | No management review or responsibility assignment |
@@ -553,13 +553,13 @@ A "textbook complete" manufacturing QA/QC system, drawing from ISO 9001, Six Sig
 
 | Strength | Why It Exceeds |
 |----------|---------------|
-| **Behavioral quality controls** | Catch-yourself triggers, no-rationalizing, fail-loud — no industry analogue |
-| **Non-deterministic testing protocol** | pass^k metric, session-enriched JSONL — novel contribution |
+| **Behavioral quality controls** | Catch-yourself triggers, no-rationalizing, fail-loud, no industry analogue |
+| **Non-deterministic testing protocol** | pass^k metric, session-enriched JSONL, novel contribution |
 | **Agent-specific test types** | Adversarial input, skill behavioral contracts, orchestration tests |
-| **Blast-radius gating** | Binary risk gate with 6 universal categories — more actionable than typical risk matrices |
-| **MTP/LTP delta procedure** | Self-healing coverage matrix with drift detection — exceeds static test plans |
+| **Blast-radius gating** | Binary risk gate with 6 universal categories, more direct than typical risk matrices |
+| **MTP/LTP delta procedure** | Self-healing coverage matrix with drift detection, exceeds static test plans |
 | **Poka-yoke integration** | Mistake-proofing woven into agent behavior, not just process documentation |
-| **SPC in deployment pipelines** | Statistical anomaly detection in staging — rare in industry practice |
+| **SPC in deployment pipelines** | Statistical anomaly detection in staging, rare in industry practice |
 
 ---
 
@@ -567,21 +567,21 @@ A "textbook complete" manufacturing QA/QC system, drawing from ISO 9001, Six Sig
 
 ### Immediate (Low Effort, High Impact)
 
-1. **Add a static analysis quality gate** — require lint/type-check to pass before merge (already implied by LSP error handling; make it an explicit gate in the sashay).
-2. **Define quantitative quality targets** — adopt DORA metrics (deployment frequency, lead time, MTTR, change failure rate) as project-level quality objectives.
-3. **Add a formal review requirement** — for agent-produced code, require at minimum a self-review checklist before PR creation.
+1. **Add a static analysis quality gate**, require lint/type-check to pass before merge (already implied by LSP error handling; make it an explicit gate in the sashay).
+2. **Define quantitative quality targets**, adopt DORA metrics (deployment frequency, lead time, MTTR, change failure rate) as project-level quality objectives.
+3. **Add a formal review requirement**, for agent-produced code, require at minimum a self-review checklist before PR creation.
 
 ### Medium-Term (Moderate Effort)
 
-4. **Implement requirements traceability** — extend the MTP/LTP matrix to include a requirements column, linking workflow paths to PURPOSE.md or ADR entries.
-5. **Add performance testing requirements** — for projects touching the Availability risk category, require load/stress testing as part of the test coverage table.
-6. **Establish process auditing** — create a periodic "quality system review" ritual that walks the framework and verifies compliance.
+4. **Implement requirements traceability**, extend the MTP/LTP matrix to include a requirements column, linking workflow paths to PURPOSE.md or ADR entries.
+5. **Add performance testing requirements**, for projects touching the Availability risk category, require load/stress testing as part of the test coverage table.
+6. **Establish process auditing**, create a periodic "quality system review" ritual that walks the framework and verifies compliance.
 
 ### Strategic (Long-Term)
 
-7. **Integrate customer feedback** — add a VOC (Voice of Customer) mechanism to the retro ritual, capturing operator satisfaction and pain points.
-8. **Develop process capability baselines** — track Cp/Cpk for key processes (sashay cycle time, defect escape rate) to enable predictive quality.
-9. **Create a quality policy statement** — a one-paragraph quality policy in AGENTS.md that sets the tone and measurable objectives for the entire framework.
+7. **Integrate customer feedback**, add a VOC (Voice of Customer) mechanism to the retro ritual, capturing operator satisfaction and pain points.
+8. **Develop process capability baselines**, track Cp/Cpk for key processes (sashay cycle time, defect escape rate) to enable predictive quality.
+9. **Create a quality policy statement**, a one-paragraph quality policy in AGENTS.md that sets the tone and measurable objectives for the entire framework.
 
 ---
 

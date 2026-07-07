@@ -1,10 +1,10 @@
 # How Does Your Quality Framework Compare?
 
-> **⚠ AI-generated, no human review.** This report was written by an AI language model (DeepSeek V4 Flash). The analysis, the comparisons, the gap assessments — all of it. No human has verified the claims, checked the source material citations, or reviewed the reasoning. The underlying source troves were also collected and normalized by AI. Treat everything here as a starting point for your own investigation, not as authoritative analysis.
+> **⚠ AI-generated, no human review.** This report was written by an AI language model (DeepSeek V4 Flash). The analysis, the comparisons, the gap assessments, all of it. No human has verified the claims, checked the source material citations, or reviewed the reasoning. The underlying source troves were also collected and normalized by AI. Treat everything here as a starting point for your own investigation, not as authoritative analysis.
 
-You have a quality framework — maybe engineering standards, a QA process, or an agent instruction system. You found this repo and want to know: how does this one differ from mine? What would I gain or lose by adopting pieces of it? And how does it relate to Claydon's argument that code review itself is the wrong artifact to review?
+You have a quality framework. Maybe engineering standards, a QA process, or an agent instruction system. You found this repo and want to know: how does this one differ from mine? What would I gain or lose by adopting pieces of it? And how does it relate to Claydon's argument that code review itself is the wrong artifact to review?
 
-This report answers those questions. It's based on a detailed analysis of an agent instruction framework (`~/.agents/AGENTS.md`) that implements 18 quality control dimensions — benchmarked against ISO 25010, IEEE 829, ISTQB, Six Sigma, TQM, SPC, and ISO 9001.
+This report answers those questions. It's based on a detailed analysis of an agent instruction framework (`~/.agents/AGENTS.md`) that implements 18 quality control dimensions, benchmarked against ISO 25010, IEEE 829, ISTQB, Six Sigma, TQM, SPC, and ISO 9001.
 
 ## What You're Looking At
 
@@ -22,21 +22,21 @@ The Claydon comparison is documented separately in [`analysis/review-intent-vs-r
 
 ## The Short Version
 
-**This framework is unusually strong in three areas that most quality systems neglect:**
+**This framework is strong in three areas that most quality systems neglect:**
 
 1. **Behavioral quality controls** — rules that govern how the AI agent itself behaves. Catch-yourself-before-you-fix triggers, no-rationalizing test failures, fail-loud principles. These have no analogue in traditional QA. They map to manufacturing's poka-yoke (mistake-proofing) and andon (stop-the-line).
 
-2. **Non-deterministic testing** — a rigorous protocol for tests that involve LLM judgement. The `pass^k` metric (probability that all k independent trials succeed), session-enriched JSONL logging, and ratio guidance for deterministic-to-non-deterministic test mix. This is a novel contribution — most frameworks don't address this at all.
+2. **Non-deterministic testing** — a rigorous protocol for tests that involve LLM judgement. The `pass^k` metric (probability that all k independent trials succeed), session-enriched JSONL logging, and ratio guidance for deterministic-to-non-deterministic test mix. Most frameworks don't address this at all.
 
 3. **Statistical process control in deployment** — SPC fitness functions (z-score anomaly detection) monitoring deploy duration, resource count, errors, and cost. 3σ threshold. This is rare even in industry practice.
 
-**It has three notable gaps that your framework might already cover:**
+**It has three gaps your framework might already cover:**
 
 - **Formal code/peer review** — there is none. The framework relies on agent self-discipline. (Though Claydon's argument suggests this may be intentional — see below.)
 - **Quantitative quality targets** — no defect density, DORA metrics, MTBF, or other standard measures.
 - **Performance/load testing** — speed guidelines exist but no load or stress testing mandate.
 
-**And it has a surprising relationship to Claydon's "Stop Reviewing Code" thesis:**
+**And it has a relationship to Claydon's "Stop Reviewing Code" thesis:**
 
 The framework's biggest gap (no code review) and Claydon's central argument (code review is the wrong artifact to review) point in the same direction. The framework's recommendations are incremental — add a self-review checklist, add a static analysis gate. Claydon's proposal is structural — remove code review entirely, replace it with spec-first BDD, human-written tests, executable constraint layers, and an adversarial planning loop. They're complementary: Claydon addresses the human-side bottleneck; this framework addresses the agent-side reliability problem.
 
@@ -46,7 +46,7 @@ The framework's biggest gap (no code review) and Claydon's central argument (cod
 
 ### 1. Test Discipline (the strongest dimension)
 
-The test-driven design spoke (583 lines — the longest by far) is the most comprehensive quality control in the framework. It mandates:
+The test-driven design spoke (583 lines, the longest by far) is the most comprehensive quality control in the framework. It mandates:
 
 - **Test-first for defects** — write a failing test before any fix. Not optional. The framework includes a list of trigger phrases ("The fix is to add X", "I'll patch Y", "Root cause is...") that should stop you mid-sentence and redirect to writing the test first.
 - **Inverse-assertion requirement** — every test suite must include at least one test where the expected outcome is a failure. A suite with only happy-path assertions is considered incomplete.
@@ -61,7 +61,7 @@ The test-driven design spoke (583 lines — the longest by far) is the most comp
 
 ### 2. Behavioral Quality Controls (the most distinctive dimension)
 
-These are rules that govern how the AI agent itself behaves — not what it produces, but how it operates. They have no direct analogue in traditional software QA:
+These are rules that govern how the AI agent itself behaves, not what it produces, but how it operates. They have no direct analogue in traditional software QA:
 
 - **Catch-yourself-before-you-fix** — a list of fix-intent phrases that trigger a STOP reflex. The framework recognizes that the most common failure mode is: diagnose a bug → jump to implementation → skip the test. The trigger words are a behavioral guard against this.
 - **No rationalizing test failures** — "A test failure is a test failure." You either fix it or decide it's testing the wrong thing. No euphemisms, no "signal," no "evidence," no "indication."
@@ -79,7 +79,7 @@ The two-stage pipelines spoke mandates staging + production targets with well-kn
 - **SPC fitness functions** — z-score anomaly detection on deploy duration, resource count, errors, and cost. Default 3σ threshold (Western Electric/Nelson standard).
 - **Branch name sanitization** — RFC 1123 via a centrally shipped slugify script.
 
-**What this means for you:** The SPC fitness functions are the standout feature here. Most deployment pipelines have monitoring but not statistical process control. The teardown safety guards are a simple but effective pattern that any team could adopt.
+**What this means for you:** The SPC fitness functions are the standout feature here. Most deployment pipelines have monitoring but not statistical process control. The teardown safety guards are a simple pattern that any team could adopt.
 
 ### 4. Architectural Governance
 
@@ -87,7 +87,7 @@ The two-stage pipelines spoke mandates staging + production targets with well-kn
 - **Single source of truth** — every piece of knowledge lives in exactly one place. No duplication, no drift.
 - **YAGNI ladder** — a 5-rung decision framework: hard-code → parameterize → abstract → plugin → language. Start at the lowest rung that works. Only climb with evidence.
 
-**What this means for you:** The YAGNI ladder is the most practical piece. It gives you a concrete decision framework for when to build generality vs. when to stay specific. Most teams have this as intuition; this makes it explicit.
+**What this means for you:** The YAGNI ladder is the most practical piece. It gives you a concrete decision framework for when to build generality vs. when to stay specific. Most teams have this as intuition. This makes it explicit.
 
 ---
 
@@ -179,7 +179,7 @@ These are complementary. Claydon addresses the human-side bottleneck; this frame
 
 ### What the Gap Analysis Missed
 
-This framework's gap analysis lists "Formal code/peer review" as a critical gap. Claydon's argument suggests this gap may be **intentional and correct** — not a gap at all, but a category error. The real gap isn't "we need better code review" but "we need different review artifacts."
+This framework's gap analysis lists "Formal code/peer review" as a critical gap. Claydon's argument suggests this gap may be **intentional and correct**, not a gap at all, but a category error. The real gap isn't "we need better code review" but "we need different review artifacts."
 
 The framework's recommendations (self-review checklist, static analysis gate) are incremental improvements to the existing model. Claydon's experiment would test whether the model itself is wrong. If he's right, this framework's weakest area (code review) isn't a gap to fill — it's a legacy practice to replace.
 

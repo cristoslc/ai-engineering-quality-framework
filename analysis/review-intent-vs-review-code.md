@@ -8,7 +8,7 @@
 
 ---
 
-Claydon's "Stop Reviewing Code. Start Reviewing Intent." proposes removing code review entirely when AI writes most code, replacing it with spec-first BDD, human-written tests, executable constraint layers, and an adversarial planning loop. Our quality framework analysis identified "Formal code/peer review" as a critical gap. These two positions are complementary, not contradictory — but they reveal a deeper question about what we're optimizing for.
+Claydon's "Stop Reviewing Code. Start Reviewing Intent." proposes removing code review entirely when AI writes most code, replacing it with spec-first BDD, human-written tests, executable constraint layers, and an adversarial planning loop. Our quality framework analysis identified "Formal code/peer review" as a critical gap. These two positions are complementary, not contradictory. But they reveal a deeper question about what we're optimizing for.
 
 ## Convergence
 
@@ -22,7 +22,7 @@ Claydon proposes **removing code review entirely** for a pilot quarter. Our fram
 
 His **adversarial planning loop** (planning agent + security agent + human arbiter after 5 rounds) is a concrete mechanism for design review that our Parley ritual gestures at but doesn't specify. This is the most directly implementable idea: a bounded adversarial loop before any code exists, catching bad decisions before they become bad code.
 
-His **executable constraint layer** (CI-enforced agent rules with agent-readable error messages) is a specific implementation of our coding discipline and fail-loud principles — but our framework keeps those as behavioral rules in markdown, not as CI gates. The insight: "Tenant field is required on all database queries" in a CI error message lands in the agent's generation loop where it can act on it. A paragraph in a markdown file does not.
+His **executable constraint layer** (CI-enforced agent rules with agent-readable error messages) is a specific implementation of our coding discipline and fail-loud principles. But our framework keeps those as behavioral rules in markdown, not as CI gates. The insight: "Tenant field is required on all database queries" in a CI error message lands in the agent's generation loop where it can act on it. A paragraph in a markdown file does not.
 
 ## Where Our Framework Goes Further
 
@@ -36,9 +36,9 @@ Our **SPC fitness functions** in deployment pipelines, **MTP/LTP coverage matric
 
 ## The Fundamental Tension
 
-Claydon's thesis: **code review is the wrong artifact to review** — replace it with spec/test/constraint review.
+Claydon's thesis: **code review is the wrong artifact to review**. Replace it with spec/test/constraint review.
 
-Our framework's thesis: **agent behavior itself needs quality controls** — the agent is not a reliable black box.
+Our framework's thesis: **agent behavior itself needs quality controls**. The agent is not a reliable black box.
 
 These are complementary. Claydon addresses the human-side bottleneck; our framework addresses the agent-side reliability problem. A combined system would look like:
 
@@ -53,7 +53,7 @@ These are complementary. Claydon addresses the human-side bottleneck; our framew
 
 ## What Our Gap Analysis Missed
 
-Our gap analysis lists "Formal code/peer review" as a critical gap. Claydon's argument suggests this gap may be **intentional and correct** — not a gap at all, but a category error. The real gap isn't "we need better code review" but "we need different review artifacts."
+Our gap analysis lists "Formal code/peer review" as a critical gap. Claydon's argument suggests this gap may be **intentional and correct**, not a gap at all, but a category error. The real gap isn't "we need better code review" but "we need different review artifacts."
 
 Our recommendations (self-review checklist, static analysis gate) are incremental improvements to the existing model. Claydon's experiment would test whether the model itself is wrong. If he's right, our framework's weakest area (code review) isn't a gap to fill — it's a legacy practice to replace.
 
@@ -62,4 +62,4 @@ Our recommendations (self-review checklist, static analysis gate) are incrementa
 - Can the adversarial planning loop be integrated into the sashay protocol? A pre-implementation gate before any code is written?
 - How do we reconcile Claydon's "no code review" with our framework's test-first mandate? If the agent writes code from specs, the tests are the review — but who reviews the tests?
 - Claydon's Ship/Show/Ask routing for specs/tests/constraints maps well onto our workflow rituals. Could the sashay protocol adopt this routing?
-- The executable constraint layer is the most actionable takeaway. Our coding discipline spoke could specify that agent rules must be CI-enforceable, not just documentary.
+- The executable constraint layer is the most practical takeaway. Our coding discipline spoke could specify that agent rules must be CI-enforceable, not just documentary.
