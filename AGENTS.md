@@ -19,6 +19,6 @@ See `docs/agents-detail/project-navigation.md` for the full hub-and-spoke map.
 ## Key references
 
 - `docs/QUALITY-FRAMEWORK.md` — the primary artifact
+- `docs/report-for-framework-owners.md` — human-readable report
 - `docs/troves/` — research source materials
-- `docs/domain-architecture/` — domain model of quality controls
-- `docs/technical-architecture/` — C4 diagrams of the quality system
+- `docs/musings/` — pre-artifact thought capture
