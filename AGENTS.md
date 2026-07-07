@@ -18,7 +18,7 @@ See `docs/agents-detail/project-navigation.md` for the full hub-and-spoke map.
 
 ## Key references
 
-- `docs/QUALITY-FRAMEWORK.md` — the primary artifact
-- `docs/report-for-framework-owners.md` — human-readable report
-- `docs/troves/` — research source materials
-- `docs/musings/` — pre-artifact thought capture
+- `analysis/QUALITY-FRAMEWORK.md` — the primary artifact
+- `analysis/report-for-framework-owners.md` — human-readable report
+- `analysis/troves/` — research source materials
+- `analysis/musings/` — pre-artifact thought capture

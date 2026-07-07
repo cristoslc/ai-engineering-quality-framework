@@ -10,13 +10,13 @@ This report answers those questions. It's based on a detailed analysis of an age
 
 This repo contains three layers of material:
 
-1. **This report** (`docs/report-for-framework-owners.md`) — what you're reading now. Written for humans. No ISO standard tables, no agent-internal jargon. It synthesizes the analysis into what matters for someone comparing frameworks.
+1. **This report** (`analysis/report-for-framework-owners.md`) — what you're reading now. Written for humans. No ISO standard tables, no agent-internal jargon. It synthesizes the analysis into what matters for someone comparing frameworks.
 
-2. **The full analysis** (`docs/QUALITY-FRAMEWORK.md`) — a 655-line document that inventories every quality control, maps each to industry standards, and identifies coverage and gaps. It was originally written for machine parsing (agents navigating the framework), but it's the authoritative source if you want the complete picture.
+2. **The full analysis** (`analysis/QUALITY-FRAMEWORK.md`) — a 655-line document that inventories every quality control, maps each to industry standards, and identifies coverage and gaps. It was originally written for machine parsing (agents navigating the framework), but it's the authoritative source if you want the complete picture.
 
 3. **The source material** — verbatim copies of the 21 files that make up the analyzed framework, collected as research troves. The [synthesis](troves/agents-hub-and-spoke-framework/synthesis.md) summarizes what each file contains and how they relate. The individual [snapshot files](troves/agents-hub-and-spoke-framework/sources/) are exact reproductions — read those if you want to see the original rules verbatim rather than through my analysis.
 
-The Claydon comparison is documented separately in [`docs/musings/review-intent-vs-review-code.md`](musings/review-intent-vs-review-code.md), with the source article captured as a [research trove](troves/review-intent-vs-review-code/).
+The Claydon comparison is documented separately in [`analysis/review-intent-vs-review-code.md`](review-intent-vs-review-code.md), with the source article captured as a [research trove](troves/review-intent-vs-review-code/).
 
 ---
 
@@ -225,6 +225,6 @@ These depend on specific tooling or workflow assumptions:
 
 ## How This Report Was Produced
 
-The analysis is based on verbatim source material from 21 files (1 hub + 20 spokes) of the `~/.agents/AGENTS.md` agent instruction framework, collected as a research trove. Each source was captured as a verbatim snapshot and a structured summary. The full analysis document (`docs/QUALITY-FRAMEWORK.md`) maps every quality control to industry standards and identifies coverage and gaps. The Claydon comparison is documented as a musing (`docs/musings/review-intent-vs-review-code.md`). All source materials are available in `docs/troves/` for verification.
+The analysis is based on verbatim source material from 21 files (1 hub + 20 spokes) of the `~/.agents/AGENTS.md` agent instruction framework, collected as a research trove. Each source was captured as a verbatim snapshot and a structured summary. The full analysis document (`analysis/QUALITY-FRAMEWORK.md`) maps every quality control to industry standards and identifies coverage and gaps. The Claydon comparison is documented in [`analysis/review-intent-vs-review-code.md`](review-intent-vs-review-code.md). All source materials are available in `analysis/troves/` for verification.
 
 **Trove references:** `trove: agents-hub-and-spoke-framework@6522010`, `trove: review-intent-vs-review-code@c652d70`

@@ -1,15 +1,13 @@
 # docs/
 
-This directory contains all project documentation, split into two architectural surfaces (domain and technical) plus cross-cutting concerns.
+This directory contains project documentation (scaffold). Analysis output lives in `analysis/`.
 
-## Surfaces
+## Files
 
-- **Domain architecture** — `DOMAIN-MODEL-L1.md`, `domain-architecture/` (DDD artifacts: context map, domain events, L2 model, event contracts)
-- **Technical architecture** — `ARCHITECTURE.md`, `technical-architecture/` (C4 diagrams, deployment topology, tech stack)
-- **Cross-cutting** — `DEVELOPER-WORKFLOWS.md`, `USER-EXPERIENCE.md`, `musings/`, `troves/`
+- `ARCHITECTURE.md` — C4 system context and tech stack
+- `DOMAIN-MODEL-L1.md` — L1 prose glossary of quality control domain
+- `DEVELOPER-WORKFLOWS.md` — build, test, deploy workflows
+- `USER-EXPERIENCE.md` — quality attributes
+- `agents-detail/` — agent-specific guidance
 
-## Primary artifact
-
-`QUALITY-FRAMEWORK.md` — the Quality Framework document with coverage/gap analysis.
-
-See `AGENTS.md` for project-level agent guidance.
+See `analysis/` for the Quality Framework analysis, report, musings, and research troves.

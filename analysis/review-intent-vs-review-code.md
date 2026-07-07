@@ -4,7 +4,7 @@
 
 **Date:** 2026-07-07
 **Source:** `trove: review-intent-vs-review-code@c652d70`
-**Related:** `docs/QUALITY-FRAMEWORK.md`, `docs/troves/agents-hub-and-spoke-framework@6522010`
+**Related:** `analysis/QUALITY-FRAMEWORK.md`, `analysis/troves/agents-hub-and-spoke-framework@6522010`
 
 ---
 
