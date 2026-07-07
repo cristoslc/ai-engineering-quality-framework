@@ -1,5 +1,7 @@
 # Research Trove: Software QA/QC Industry Standards
 
+> **⚠ AI-generated, no human review.** This trove was collected and summarized by an AI language model. No human has verified the sources or reviewed the content.
+
 **Collected:** 2026-07-07
 **Sources:** Brave Search LLM Context API
 **Purpose:** Reference material for the Quality Framework document

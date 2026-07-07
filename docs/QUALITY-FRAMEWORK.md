@@ -1,5 +1,7 @@
 # Quality Framework: AI-Assisted Software Engineering
 
+> **⚠ AI-generated, no human review.** This analysis was written by an AI language model. No human has verified the claims, checked the source material citations, or reviewed the reasoning. Treat it as a starting point for your own investigation.
+
 ## Analysis of the `~/.agents/AGENTS.md` Hub-and-Spoke Quality Controls
 
 **Date:** 2026-07-07

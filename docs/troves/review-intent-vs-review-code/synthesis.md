@@ -1,5 +1,7 @@
 # Synthesis: Review Intent vs. Review Code
 
+> **⚠ AI-generated, no human review.** This synthesis was written by an AI language model. No human has verified the claims, checked the source material, or reviewed the reasoning. The underlying snapshot file is a verbatim reproduction of the original blog post and is not AI-generated.
+
 **Trove:** review-intent-vs-review-code
 **Created:** 2026-07-07
 **Sources:** 1 (web article)

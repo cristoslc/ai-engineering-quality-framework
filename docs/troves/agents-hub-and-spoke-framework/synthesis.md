@@ -1,5 +1,7 @@
 # Synthesis: `~/.agents/AGENTS.md` Hub-and-Spoke Framework
 
+> **⚠ AI-generated, no human review.** This synthesis was written by an AI language model. No human has verified the claims, checked the source material, or reviewed the reasoning. The underlying snapshot files are verbatim reproductions of the original source files and are not AI-generated.
+
 **Trove:** agents-hub-and-spoke-framework
 **Created:** 2026-07-07
 **Sources:** 21 (1 hub + 20 spokes)

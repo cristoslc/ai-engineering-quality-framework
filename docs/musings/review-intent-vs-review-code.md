@@ -1,5 +1,7 @@
 # Musing: Review Intent vs. Review Code — Claydon's Thesis vs. Our Framework
 
+> **⚠ AI-generated, no human review.** This musing was written by an AI language model. No human has verified the claims, checked the source material citations, or reviewed the reasoning.
+
 **Date:** 2026-07-07
 **Source:** `trove: review-intent-vs-review-code@c652d70`
 **Related:** `docs/QUALITY-FRAMEWORK.md`, `docs/troves/agents-hub-and-spoke-framework@6522010`
