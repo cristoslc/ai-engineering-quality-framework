@@ -4,6 +4,18 @@ You have a quality framework — maybe engineering standards, a QA process, or a
 
 This report answers those questions. It's based on a detailed analysis of an agent instruction framework (`~/.agents/AGENTS.md`) that implements 18 quality control dimensions — benchmarked against ISO 25010, IEEE 829, ISTQB, Six Sigma, TQM, SPC, and ISO 9001.
 
+## What You're Looking At
+
+This repo contains three layers of material:
+
+1. **This report** (`docs/report-for-framework-owners.md`) — what you're reading now. Written for humans. No ISO standard tables, no agent-internal jargon. It synthesizes the analysis into what matters for someone comparing frameworks.
+
+2. **The full analysis** (`docs/QUALITY-FRAMEWORK.md`) — a 655-line document that inventories every quality control, maps each to industry standards, and identifies coverage and gaps. It was originally written for machine parsing (agents navigating the framework), but it's the authoritative source if you want the complete picture.
+
+3. **The source material** — verbatim copies of the 21 files that make up the analyzed framework, collected as research troves. The [synthesis](troves/agents-hub-and-spoke-framework/synthesis.md) summarizes what each file contains and how they relate. The individual [snapshot files](troves/agents-hub-and-spoke-framework/sources/) are exact reproductions — read those if you want to see the original rules verbatim rather than through my analysis.
+
+The Claydon comparison is documented separately in [`docs/musings/review-intent-vs-review-code.md`](musings/review-intent-vs-review-code.md), with the source article captured as a [research trove](troves/review-intent-vs-review-code/).
+
 ---
 
 ## The Short Version
