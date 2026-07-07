@@ -1,0 +1,30 @@
+trove:
+  id: review-intent-vs-review-code
+  created: 2026-07-07
+  tags:
+    - code-review
+    - intent-review
+    - ai-tooling
+    - specification
+    - bdd
+    - verification
+    - constraint-layer
+  freshness_ttl_days: 90
+  description: >
+    Claydon's "Stop Reviewing Code. Start Reviewing Intent." blog post
+    (July 2026) arguing that when AI writes most code, human review should
+    shift from code to specifications, tests, and constraint layers.
+
+sources:
+  - slug: review-intent-article
+    title: "Stop Reviewing Code. Start Reviewing Intent."
+    type: web
+    url: "https://claydon.co/posts/stop-reviewing-code-start-reviewing-intent/"
+    fetched: 2026-07-07T17:29:00Z
+    tags: [code-review, intent-review, ai-tooling, bdd, specification]
+
+history:
+  - event: created
+    date: 2026-07-07
+    commit: "c652d70"
+    sources: 1

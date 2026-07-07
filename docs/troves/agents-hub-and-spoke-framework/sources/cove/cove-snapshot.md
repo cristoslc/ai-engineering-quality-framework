@@ -1,0 +1,92 @@
+---
+slug: cove
+title: Cove
+type: local
+path: ~/.agents/agents-md-detail/cove.md
+fetched: 2026-07-07T14:00:00Z
+---
+
+# Cove
+
+This machine runs Cove — a local developer platform (forge, vault, CI, registry, pages).
+All services are offline-first.
+
+## Forgejo
+
+- Web: `https://git.cove/` (TLS via nginx+mkcert)
+- CLI: `fj` — see `~/.agents/agents-md-detail/fj.md` for full reference
+- GitHub CLI: `gh` — see `~/.agents/agents-md-detail/gh.md` for full reference
+
+SSH is available as an optional transport. `cove up` generates `~/.ssh/config.d/forgejo-localhost.conf` with a dedicated key at `~/.ssh/forgejo_ed25519` for users who need SSH.
+
+## Vault / Credentials
+
+Never hardcode secrets. Use:
+- `cove creds vault-get op://vault/item/field` — read a cached secret
+- `cove creds vault-put op://vault/item/field` — cache a 1Password secret into Vault
+- `cove creds batch-pull` — refresh all cached refs in one batch (single biometric prompt)
+- `cove creds 1p-bulk-write <seeds.yaml> --execute` — write seed items to 1Password
+
+Vault address: `https://vault.cove/` (TLS via nginx+mkcert)
+
+## CLI reference
+
+| Command | Description |
+|---------|-------------|
+| `cove up` | Bring up cove containers and provision Forgejo |
+| `cove down` | Stop cove containers |
+| `cove creds vault-get <opref>` | Read a cached secret from Vault |
+| `cove creds vault-put <opref>` | Cache a 1Password secret into Vault |
+| `cove creds batch-pull` | Pull all known op:// refs in one batch |
+| `cove install` | Inject cove guidance into AGENTS.md |
+| `cove install -g` | Inject into global ~/.agents/AGENTS.md |
+| `cove uninstall` | Destroy all cove containers, data, and credentials |
+
+## Architecture
+
+| Service | Internal | External | Notes |
+|---------|----------|----------|-------|
+| Forgejo | forgejo:3000 | https://git.cove/ | via nginx proxy |
+| Vault | vault:8200 | https://vault.cove/ | via nginx proxy |
+| Nginx | — | 0.0.0.0:443 | mkcert TLS termination |
+| Forgejo SSH | 0.0.0.0:2222 | — | optional, direct |
+| dnsmasq | 0.0.0.0:5353 | — | offline wildcard DNS |
+
+All HTTP traffic routes through nginx at `*.cove` subdomains. Ports bind on `0.0.0.0` for Colima VM port forwarding. Tailscale serve forwards tailnet traffic to nginx.
+
+## Prerequisites (macOS)
+
+- **Colima** — Docker runtime. Install: `brew install colima && colima start`
+- **mkcert** — Local TLS certificates. Install: `brew install mkcert && mkcert -install`
+
+## TLS
+
+- **Local:** mkcert generates `cove` + `*.cove` cert in `~/Documents/cove-data/certs/`. nginx terminates TLS. macOS resolver (`/etc/resolver/cove`) delegates `*.cove` DNS to dnsmasq on `127.0.0.1:5353`.
+- **Tailscale:** Tailscale cert (public FQDN) for remote access. Tailscale serve forwards `:443` → `127.0.0.1:443`.
+
+## Git remotes
+
+- Use `origin` for your **primary** remote (GitHub, GitLab, or Cove itself).
+- Add a **secondary** remote named after the forge:
+  - `fj` — Cove/Forgejo at `git.cove`
+  - `gh` — GitHub
+  - `gl` — GitLab
+- Example: `git remote add fj git@git.cove:owner/repo.git`
+- This convention lets agents push/pull to the right forge without guessing.
+
+## New projects
+
+When creating a new project to push to Cove:
+
+1. Create the repo on Forgejo at `https://git.cove/` first.
+2. `git init` locally, then `git remote add origin <your-primary-remote>` (e.g., GitHub).
+3. `git remote add fj git@git.cove:owner/repo.git`
+4. Push to both: `git push -u origin main && git push -u fj main`
+
+This keeps Cove as a mirror/backup while `origin` stays your primary collaboration forge.
+
+## Constraints
+
+- Do not add cloud dependencies.
+- Do not assume internet access during builds or CI.
+- Cove's own git remotes go to Forgejo at `git.cove`.

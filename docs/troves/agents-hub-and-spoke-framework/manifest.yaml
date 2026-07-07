@@ -1,0 +1,173 @@
+trove:
+  id: agents-hub-and-spoke-framework
+  created: 2026-07-07
+  tags:
+    - agent-instructions
+    - quality-control
+    - hub-and-spoke
+    - software-engineering
+    - testing
+    - debugging
+    - architecture
+    - deployment
+    - workflow-rituals
+  freshness_ttl_days: 90
+  description: >
+    The global agent instruction framework at ~/.agents/AGENTS.md and all
+    spoke files under ~/.agents/agents-md-detail/. Captures the quality
+    control mechanisms, behavioral guards, process models, and architectural
+    governance rules that govern AI-assisted software engineering.
+
+sources:
+  - slug: agents-hub
+    title: "Global Agent Instructions (hub)"
+    type: local
+    path: "~/.agents/AGENTS.md"
+    fetched: 2026-07-07T14:00:00Z
+    tags: [hub, governance, routing]
+
+  - slug: test-driven-design
+    title: "Test-Driven Design"
+    type: local
+    path: "~/.agents/agents-md-detail/test-driven-design.md"
+    fetched: 2026-07-07T14:00:00Z
+    tags: [testing, tdd, coverage, non-deterministic]
+
+  - slug: debugging-ritual
+    title: "Debugging Ritual"
+    type: local
+    path: "~/.agents/agents-md-detail/debugging-ritual.md"
+    fetched: 2026-07-07T14:00:00Z
+    tags: [debugging, defect-management, regression]
+
+  - slug: fail-loud-never-coerce
+    title: "Fail Loud; Never Coerce"
+    type: local
+    path: "~/.agents/agents-md-detail/fail-loud-never-coerce.md"
+    fetched: 2026-07-07T14:00:00Z
+    tags: [error-handling, input-validation, safety]
+
+  - slug: warnings-and-deprecations
+    title: "Warnings and Deprecations"
+    type: local
+    path: "~/.agents/agents-md-detail/warnings-and-deprecations.md"
+    fetched: 2026-07-07T14:00:00Z
+    tags: [warnings, deprecations, tech-debt, triage]
+
+  - slug: coding-discipline
+    title: "Coding Discipline"
+    type: local
+    path: "~/.agents/agents-md-detail/coding-discipline.md"
+    fetched: 2026-07-07T14:00:00Z
+    tags: [architecture, domain-model, yagni, dry]
+
+  - slug: operator-assisted-e2e
+    title: "Operator-Assisted E2E / UAT Protocol"
+    type: local
+    path: "~/.agents/agents-md-detail/operator-assisted-e2e.md"
+    fetched: 2026-07-07T14:00:00Z
+    tags: [e2e, uat, manual-testing, yaml-suite]
+
+  - slug: lsp-errors
+    title: "LSP Errors"
+    type: local
+    path: "~/.agents/agents-md-detail/lsp-errors.md"
+    fetched: 2026-07-07T14:00:00Z
+    tags: [lsp, static-analysis, tech-debt, linting]
+
+  - slug: two-stage-pipelines
+    title: "Two-Stage Pipelines"
+    type: local
+    path: "~/.agents/agents-md-detail/two-stage-pipelines.md"
+    fetched: 2026-07-07T14:00:00Z
+    tags: [deployment, staging, spc, ci-cd, safety]
+
+  - slug: event-contracts
+    title: "Event Contract Scaffolding"
+    type: local
+    path: "~/.agents/agents-md-detail/event-contracts.md"
+    fetched: 2026-07-07T14:00:00Z
+    tags: [events, contracts, schema, validation]
+
+  - slug: context-map-domain-model
+    title: "Context Map & Domain Model"
+    type: local
+    path: "~/.agents/agents-md-detail/context-map-domain-model.md"
+    fetched: 2026-07-07T14:00:00Z
+    tags: [ddd, domain-model, context-map, ubiquitous-language]
+
+  - slug: new-project-scaffolding
+    title: "New Project Scaffolding"
+    type: local
+    path: "~/.agents/agents-md-detail/new-project-scaffolding.md"
+    fetched: 2026-07-07T14:00:00Z
+    tags: [scaffolding, project-setup, conventions]
+
+  - slug: todo-discipline
+    title: "Todo List Discipline"
+    type: local
+    path: "~/.agents/agents-md-detail/todo-discipline.md"
+    fetched: 2026-07-07T14:00:00Z
+    tags: [todos, schema, cross-agent]
+
+  - slug: mermaid-usage
+    title: "Mermaid.js Usage"
+    type: local
+    path: "~/.agents/agents-md-detail/mermaid-usage.md"
+    fetched: 2026-07-07T14:00:00Z
+    tags: [mermaid, diagrams, documentation]
+
+  - slug: worktree-discipline
+    title: "Worktree Discipline"
+    type: local
+    path: "~/.agents/agents-md-detail/worktree-discipline.md"
+    fetched: 2026-07-07T14:00:00Z
+    tags: [git, worktree, branching, hooks]
+
+  - slug: subagent-delegation
+    title: "Subagent Delegation"
+    type: local
+    path: "~/.agents/agents-md-detail/subagent-delegation.md"
+    fetched: 2026-07-07T14:00:00Z
+    tags: [subagents, model-selection, cost-control]
+
+  - slug: overnight-autonomy
+    title: "Overnight Autonomy & Bedtime Nudging"
+    type: local
+    path: "~/.agents/agents-md-detail/overnight-autonomy.md"
+    fetched: 2026-07-07T14:00:00Z
+    tags: [autonomy, overnight, scheduling, state-machine]
+
+  - slug: tool-usage
+    title: "Tool Usage — Consolidated Reference"
+    type: local
+    path: "~/.agents/agents-md-detail/tool-usage.md"
+    fetched: 2026-07-07T14:00:00Z
+    tags: [tools, conventions, diagnostics]
+
+  - slug: workflow-rituals
+    title: "Workflow Rituals"
+    type: local
+    path: "~/.agents/agents-md-detail/workflow-rituals.md"
+    fetched: 2026-07-07T14:00:00Z
+    tags: [rituals, sashay, parley, retro, muse, eda]
+
+  - slug: agent-testing
+    title: "Agent Testing"
+    type: local
+    path: "~/.agents/agents-md-detail/agent-testing.md"
+    fetched: 2026-07-07T14:00:00Z
+    tags: [agent-testing, subagents, skills, mcp, adversarial]
+
+  - slug: cove
+    title: "Cove"
+    type: local
+    path: "~/.agents/agents-md-detail/cove.md"
+    fetched: 2026-07-07T14:00:00Z
+    tags: [cove, forgejo, vault, offline-first, secrets]
+
+history:
+  - event: created
+    date: 2026-07-07
+    commit: "6522010"
+    sources: 21
