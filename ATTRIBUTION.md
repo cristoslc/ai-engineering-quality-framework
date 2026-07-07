@@ -1,32 +1,55 @@
 # ATTRIBUTION
 
-This repository contains or is derived from the following third-party works.
+This repository contains or references the following third-party works.
 
-## Analyzed Framework
+---
 
-The `~/.agents/AGENTS.md` hub-and-spoke framework analyzed in this repo was built by the repository owner. The verbatim source files in `analysis/troves/agents-hub-and-spoke-framework/sources/` are reproductions of that work.
+`~/.agents/AGENTS.md` hub-and-spoke framework — repository owner
 
-## Research Troves
+getautonoma Happy/Sad/Edge/Corner taxonomy — https://getautonoma.com
 
-The following troves were collected via Brave Search LLM Context API and reference publicly available industry standards. No single source to attribute beyond the standards bodies themselves.
+failfastmoveon Agile Coverage Matrix — https://failfastmoveon.blogspot.com
 
-- `analysis/troves/software-qa-standards.md` — ISO/IEC 25010, IEEE 829, ISTQB, ISO/IEC 29119, CI/CD quality gates
-- `analysis/troves/manufacturing-quality-practices.md` — ISO 9001, Six Sigma DMAIC, SPC, TQM, Lean, Poka-Yoke
+Anthropic Skills pattern — https://docs.anthropic.com
 
-## External Concepts Referenced
+HumanLayer AGENTS.md best practices — https://humanlayer.com
 
-| Concept | Source |
-|---------|--------|
-| MTP/LTP two-tier coverage matrix | ISTQB glossary, IEEE 829 |
-| Happy/Sad/Edge/Corner taxonomy | getautonoma |
-| Blast-radius gate | getautonoma, failfastmoveon Agile Coverage Matrix |
-| Hub-and-spoke progressive disclosure | Anthropic Skills pattern |
-| Instruction budget concept | HumanLayer, AI Hero, ETH Zurich study |
-| Overnight autonomy scheduling | opencode-scheduler, claude-code-scheduler |
-| "Fail Fast, Fail Loud", "Review boundaries, not implementation", "Tests as Specification", "Types as Contracts", "Vertical Slices, Strong Boundaries", "Helpful Data Coercion", "Context rot" | Christina Lin, "AI Coding & Review Practices in 2026" (Google Cloud Community, June 2026) |
-| pass^k metric and k=5 convention | Anthropic τ-Bench |
-| YAGNI ladder | [ponytail](https://github.com/ponytail/ponytail) |
-| "Stop Reviewing Code. Start Reviewing Intent." | Claydon (July 2026) |
-| Adversarial planning loop, "Vibes don't scale", executable contract | Paul Stack |
-| `calculateTax` example, spec-first TDD | Dave Farley |
-| Ship/Show/Ask framework | Martin Fowler |
+AI Hero AGENTS.md guide — https://aihero.ai
+
+ETH Zurich AGENTS.md study — https://augment.dev
+
+opencode-scheduler — https://github.com/different-ai/opencode-scheduler
+
+claude-code-scheduler — https://github.com/jshchnz/claude-code-scheduler
+
+Christina Lin, "AI Coding & Review Practices in 2026" — Google Cloud Community, June 2026
+
+Anthropic τ-Bench — https://github.com/anthropics/tau-bench
+
+ponytail YAGNI ladder — https://github.com/ponytail/ponytail
+
+Claydon, "Stop Reviewing Code. Start Reviewing Intent." — https://claydon.co/posts/stop-reviewing-code-start-reviewing-intent/
+
+Paul Stack, adversarial planning loop / "Vibes don't scale" — referenced in Claydon's post
+
+Dave Farley, `calculateTax` example / spec-first TDD — AI DevCon 2026, referenced in Claydon's post
+
+Martin Fowler, Ship/Show/Ask framework — https://martinfowler.com/articles/ship-show-ask.html
+
+ISO/IEC 25010 — International Organization for Standardization
+
+IEEE 829 — Institute of Electrical and Electronics Engineers
+
+ISTQB glossary — International Software Testing Qualifications Board
+
+ISO/IEC 29119 — International Organization for Standardization
+
+ISO 9001 — International Organization for Standardization
+
+Six Sigma DMAIC — Motorola / various
+
+Statistical Process Control (SPC) — Walter Shewhart
+
+Total Quality Management (TQM) — W. Edwards Deming / various
+
+Lean manufacturing / Poka-Yoke — Toyota Production System / Shigeo Shingo
