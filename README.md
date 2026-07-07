@@ -10,7 +10,7 @@ A quality control analysis of an AI-assisted software engineering agent framewor
 
 You already have a quality framework — maybe a set of engineering standards, a QA process, or an agent instruction system. You found this repo and want to know: how does this one differ from mine? What would I gain or lose by adopting pieces of it? And how does it relate to Claydon's argument that code review itself is the wrong artifact to review?
 
-**Start here:** [`docs/QUALITY-FRAMEWORK.md`](docs/QUALITY-FRAMEWORK.md) — the full analysis. It inventories 18 quality control dimensions, maps each to industry standards, and identifies where this framework is strong, where it has gaps, and where it exceeds conventional practice.
+**Start here:** [`docs/report-for-framework-owners.md`](docs/report-for-framework-owners.md) — a human-readable report written for you. It covers what this framework does well, where it has gaps, how it compares to Claydon's thesis, and what patterns you can take from it. No tables of ISO standards, no agent-internal jargon.
 
 **For the Claydon comparison:** [`docs/musings/review-intent-vs-review-code.md`](docs/musings/review-intent-vs-review-code.md) — a structured compare-and-contrast. The short version: Claydon addresses the human-side bottleneck (shift review from code to specs/tests/constraints); this framework addresses the agent-side reliability problem (behavioral controls, non-deterministic testing, SPC monitoring). They're complementary. The framework's biggest gap — "no formal code review" — may not be a gap at all if Claydon is right.
 
@@ -90,6 +90,6 @@ docs/
 
 ## Quick Start
 
-1. **Framework owner:** Read [`docs/QUALITY-FRAMEWORK.md`](docs/QUALITY-FRAMEWORK.md) — start with the executive summary, then jump to the gap analysis (section 5) and recommendations (section 7).
+1. **Framework owner:** Read [`docs/report-for-framework-owners.md`](docs/report-for-framework-owners.md) — the human-readable report. If you want the full technical analysis with all industry mappings, `docs/QUALITY-FRAMEWORK.md` is available but was written for machine parsing.
 2. **Claydon-curious:** Read [`docs/musings/review-intent-vs-review-code.md`](docs/musings/review-intent-vs-review-code.md) — then decide whether to read the full framework analysis.
 3. **Excerptor:** Scan the portable patterns table above, then drill into the relevant trove source files for the full specification.
